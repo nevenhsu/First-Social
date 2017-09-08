@@ -14,6 +14,11 @@
 		0BA47A811F5EE6CB00ED941E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA47A7F1F5EE6CB00ED941E /* LaunchScreen.storyboard */; };
 		0BA47A8C1F5EE6CB00ED941E /* First_SocialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA47A8B1F5EE6CB00ED941E /* First_SocialTests.swift */; };
 		0BBFB2611F5EEE1200F38B04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BBFB2601F5EEE1200F38B04 /* GoogleService-Info.plist */; };
+		0BBFB2631F617D9700F38B04 /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFB2621F617D9700F38B04 /* FancyView.swift */; };
+		0BBFB2651F617F7400F38B04 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFB2641F617F7400F38B04 /* Constant.swift */; };
+		0BBFB2671F61848800F38B04 /* FancyBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFB2661F61848800F38B04 /* FancyBtn.swift */; };
+		0BBFB2691F6184A300F38B04 /* RoundFancyBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFB2681F6184A300F38B04 /* RoundFancyBtn.swift */; };
+		0BBFB26B1F6188B300F38B04 /* FancyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFB26A1F6188B300F38B04 /* FancyTextField.swift */; };
 		6A4889E1BB30B2E06F03BC17 /* Pods_First_Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9725F5A05FDEB6C52983F4 /* Pods_First_Social.framework */; };
 		8EC69429FB4214E7CDE8DE2A /* Pods_First_SocialTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0D706EF9CCABA23B2A0C6A6 /* Pods_First_SocialTests.framework */; };
 /* End PBXBuildFile section */
@@ -29,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B0D87AB1F62FF3900D79415 /* First-Social.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "First-Social.entitlements"; sourceTree = "<group>"; };
 		0BA47A731F5EE6CA00ED941E /* First-Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "First-Social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BA47A761F5EE6CA00ED941E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BA47A781F5EE6CA00ED941E /* SigninVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
@@ -40,6 +46,11 @@
 		0BA47A8B1F5EE6CB00ED941E /* First_SocialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = First_SocialTests.swift; sourceTree = "<group>"; };
 		0BA47A8D1F5EE6CB00ED941E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BBFB2601F5EEE1200F38B04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0BBFB2621F617D9700F38B04 /* FancyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
+		0BBFB2641F617F7400F38B04 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		0BBFB2661F61848800F38B04 /* FancyBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyBtn.swift; sourceTree = "<group>"; };
+		0BBFB2681F6184A300F38B04 /* RoundFancyBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundFancyBtn.swift; sourceTree = "<group>"; };
+		0BBFB26A1F6188B300F38B04 /* FancyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyTextField.swift; sourceTree = "<group>"; };
 		0D9725F5A05FDEB6C52983F4 /* Pods_First_Social.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_First_Social.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ACD4A8105D754570286FFBB /* Pods-First-Social.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-First-Social.release.xcconfig"; path = "Pods/Target Support Files/Pods-First-Social/Pods-First-Social.release.xcconfig"; sourceTree = "<group>"; };
 		9AADDD2ACD2250E8C332D2DD /* Pods-First-SocialTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-First-SocialTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-First-SocialTests/Pods-First-SocialTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -91,11 +102,12 @@
 		0BA47A751F5EE6CA00ED941E /* First-Social */ = {
 			isa = PBXGroup;
 			children = (
+				0B0D87AB1F62FF3900D79415 /* First-Social.entitlements */,
+				0BBFB25C1F5EEBD800F38B04 /* controller */,
+				0BBFB25D1F5EEBE300F38B04 /* view */,
+				0BBFB25B1F5EEBD100F38B04 /* modal */,
 				0BBFB25F1F5EEBFF00F38B04 /* resource */,
 				0BBFB25E1F5EEBEA00F38B04 /* utli */,
-				0BBFB25D1F5EEBE300F38B04 /* view */,
-				0BBFB25C1F5EEBD800F38B04 /* controller */,
-				0BBFB25B1F5EEBD100F38B04 /* modal */,
 			);
 			path = "First-Social";
 			sourceTree = "<group>";
@@ -129,6 +141,10 @@
 			children = (
 				0BA47A7A1F5EE6CA00ED941E /* Main.storyboard */,
 				0BA47A7F1F5EE6CB00ED941E /* LaunchScreen.storyboard */,
+				0BBFB2621F617D9700F38B04 /* FancyView.swift */,
+				0BBFB2661F61848800F38B04 /* FancyBtn.swift */,
+				0BBFB2681F6184A300F38B04 /* RoundFancyBtn.swift */,
+				0BBFB26A1F6188B300F38B04 /* FancyTextField.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -139,6 +155,7 @@
 				0BBFB2601F5EEE1200F38B04 /* GoogleService-Info.plist */,
 				0BA47A821F5EE6CB00ED941E /* Info.plist */,
 				0BA47A761F5EE6CA00ED941E /* AppDelegate.swift */,
+				0BBFB2641F617F7400F38B04 /* Constant.swift */,
 			);
 			name = utli;
 			sourceTree = "<group>";
@@ -229,6 +246,11 @@
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = 48XD59469V;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					0BA47A861F5EE6CB00ED941E = {
 						CreatedOnToolsVersion = 8.2;
@@ -376,8 +398,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BBFB2671F61848800F38B04 /* FancyBtn.swift in Sources */,
 				0BA47A791F5EE6CA00ED941E /* SigninVC.swift in Sources */,
 				0BA47A771F5EE6CA00ED941E /* AppDelegate.swift in Sources */,
+				0BBFB2631F617D9700F38B04 /* FancyView.swift in Sources */,
+				0BBFB26B1F6188B300F38B04 /* FancyTextField.swift in Sources */,
+				0BBFB2651F617F7400F38B04 /* Constant.swift in Sources */,
+				0BBFB2691F6184A300F38B04 /* RoundFancyBtn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +544,7 @@
 			baseConfigurationReference = BB4083DE2B7584AAB931DBA0 /* Pods-First-Social.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "First-Social/First-Social.entitlements";
 				DEVELOPMENT_TEAM = 48XD59469V;
 				INFOPLIST_FILE = "First-Social/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -531,6 +559,7 @@
 			baseConfigurationReference = 8ACD4A8105D754570286FFBB /* Pods-First-Social.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "First-Social/First-Social.entitlements";
 				DEVELOPMENT_TEAM = 48XD59469V;
 				INFOPLIST_FILE = "First-Social/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
