@@ -23,15 +23,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W4q-fn-cXu" customClass="FancyView" customModule="First_Social" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="devslopes-logo" translatesAutoresizingMaskIntoConstraints="NO" id="ETn-xM-3IX">
-                                        <rect key="frame" x="40" y="16" width="240" height="88"/>
+                                        <rect key="frame" x="40" y="16" width="240" height="64"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.23974236845970154" green="0.83640080690383911" blue="0.85536319017410278" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="2xM-2u-3aP"/>
+                                    <constraint firstAttribute="height" constant="120" id="2xM-2u-3aP">
+                                        <variation key="heightClass=regular" constant="96"/>
+                                    </constraint>
                                     <constraint firstAttribute="trailing" secondItem="ETn-xM-3IX" secondAttribute="trailing" constant="40" id="HI2-Cw-ecF"/>
                                     <constraint firstItem="ETn-xM-3IX" firstAttribute="top" secondItem="W4q-fn-cXu" secondAttribute="top" constant="16" id="VWn-Eb-so7"/>
                                     <constraint firstAttribute="bottom" secondItem="ETn-xM-3IX" secondAttribute="bottom" constant="16" id="c5U-cq-bii"/>
@@ -39,10 +41,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qls-2t-hig">
-                                <rect key="frame" x="0.0" y="496" width="320" height="72"/>
+                                <rect key="frame" x="0.0" y="504" width="320" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you haven't signed in before, an account will be automatically created for you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hf-vz-6TD">
-                                        <rect key="frame" x="8" y="17.5" width="304" height="38.5"/>
+                                        <rect key="frame" x="8" y="13.5" width="304" height="38.5"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -51,53 +53,81 @@
                                 <color key="backgroundColor" red="0.16995236277580261" green="0.63252741098403931" blue="0.63028532266616821" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="1Hf-vz-6TD" secondAttribute="trailing" constant="8" id="Pu3-k5-xba"/>
-                                    <constraint firstAttribute="height" constant="72" id="WJe-k4-PFt"/>
+                                    <constraint firstAttribute="height" constant="72" id="WJe-k4-PFt">
+                                        <variation key="heightClass=regular" constant="64"/>
+                                    </constraint>
                                     <constraint firstItem="1Hf-vz-6TD" firstAttribute="leading" secondItem="qls-2t-hig" secondAttribute="leading" constant="8" id="bP4-Rv-LVO"/>
                                     <constraint firstItem="1Hf-vz-6TD" firstAttribute="centerY" secondItem="qls-2t-hig" secondAttribute="centerY" id="ssd-7I-X7J"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a sign in method" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VmK-nQ-HGA">
-                                <rect key="frame" x="48" y="128" width="224" height="19.5"/>
+                                <rect key="frame" x="48" y="104" width="224" height="19.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="RUg-T5-wUy">
-                                <rect key="frame" x="32" y="339" width="256" height="136"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="RUg-T5-wUy">
+                                <rect key="frame" x="32" y="268" width="256" height="126"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QOJ-j5-4xN" customClass="FancyTextField" customModule="First_Social" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="256" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="256" height="34"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j5R-DB-uta" customClass="FancyTextField" customModule="First_Social" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50.5" width="256" height="35"/>
+                                        <rect key="frame" x="0.0" y="46" width="256" height="34"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THX-zn-8Ze" customClass="FancyBtn" customModule="First_Social" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="101.5" width="256" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="92" width="256" height="34"/>
                                         <color key="backgroundColor" red="0.85181134939193726" green="0.31910255551338196" blue="0.14260092377662659" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signinTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lvf-01-8Fu"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="136" id="nXZ-1j-TPe"/>
                                 </constraints>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="nXZ-1j-TPe"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1R-KB-xLg" customClass="RoundFancyBtn" customModule="First_Social" customModuleProvider="target">
-                                <rect key="frame" x="80" y="155" width="160" height="160"/>
+                                <rect key="frame" x="100" y="131.5" width="120" height="120"/>
                                 <color key="backgroundColor" red="0.35269182919999997" green="0.44134205580000002" blue="0.69439387320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="Jv4-LX-KkI"/>
-                                    <constraint firstAttribute="width" constant="160" id="kb7-mM-tJ3"/>
+                                    <constraint firstAttribute="height" constant="160" id="Jv4-LX-KkI">
+                                        <variation key="heightClass=regular" constant="120"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="96" id="guN-Xd-aLE"/>
+                                    <constraint firstAttribute="width" constant="160" id="kb7-mM-tJ3">
+                                        <variation key="heightClass=regular" constant="120"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="96" id="ngS-kL-y7a"/>
                                 </constraints>
                                 <state key="normal" image="f"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="guN-Xd-aLE"/>
+                                        <exclude reference="ngS-kL-y7a"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="guN-Xd-aLE"/>
+                                        <exclude reference="ngS-kL-y7a"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="signinBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TRB-FS-JyY"/>
                                 </connections>
@@ -107,24 +137,47 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="W4q-fn-cXu" secondAttribute="trailing" id="9Af-GF-E7F"/>
                             <constraint firstItem="W4q-fn-cXu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Aa3-hR-kFs"/>
+                            <constraint firstItem="RUg-T5-wUy" firstAttribute="top" secondItem="m1R-KB-xLg" secondAttribute="bottom" constant="16" id="Cus-pA-zIA"/>
                             <constraint firstItem="RUg-T5-wUy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="HgH-MI-dmM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VmK-nQ-HGA" secondAttribute="trailing" constant="32" id="OC8-aH-ILI"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qls-2t-hig" secondAttribute="bottom" id="PPs-Lo-xW0"/>
+                            <constraint firstItem="RUg-T5-wUy" firstAttribute="top" secondItem="m1R-KB-xLg" secondAttribute="bottom" constant="24" id="PaQ-sD-MDb"/>
                             <constraint firstItem="VmK-nQ-HGA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="32" id="Pga-u5-7Uc"/>
-                            <constraint firstItem="RUg-T5-wUy" firstAttribute="top" secondItem="m1R-KB-xLg" secondAttribute="bottom" constant="24" id="UIw-KP-MVq"/>
+                            <constraint firstItem="RUg-T5-wUy" firstAttribute="top" secondItem="m1R-KB-xLg" secondAttribute="bottom" constant="24" id="UIw-KP-MVq">
+                                <variation key="heightClass=regular" constant="16"/>
+                            </constraint>
                             <constraint firstItem="m1R-KB-xLg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vfs-VF-6rJ"/>
                             <constraint firstAttribute="trailing" secondItem="qls-2t-hig" secondAttribute="trailing" id="X9V-cc-Iy1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RUg-T5-wUy" secondAttribute="trailing" constant="16" id="kBa-aR-fjn"/>
-                            <constraint firstItem="m1R-KB-xLg" firstAttribute="top" secondItem="VmK-nQ-HGA" secondAttribute="bottom" constant="8" id="lWm-OQ-2vT"/>
+                            <constraint firstItem="m1R-KB-xLg" firstAttribute="top" secondItem="VmK-nQ-HGA" secondAttribute="bottom" constant="8" id="lWm-OQ-2vT">
+                                <variation key="heightClass=regular" constant="8"/>
+                            </constraint>
                             <constraint firstItem="VmK-nQ-HGA" firstAttribute="top" secondItem="W4q-fn-cXu" secondAttribute="bottom" constant="8" id="rRJ-fB-BLx"/>
                             <constraint firstItem="W4q-fn-cXu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vJN-Bz-Pjo"/>
+                            <constraint firstItem="RUg-T5-wUy" firstAttribute="top" secondItem="m1R-KB-xLg" secondAttribute="bottom" constant="16" id="vfZ-ZB-puU"/>
                             <constraint firstItem="qls-2t-hig" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xq3-oK-icc"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Cus-pA-zIA"/>
+                                <exclude reference="PaQ-sD-MDb"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="PaQ-sD-MDb"/>
+                                <exclude reference="UIw-KP-MVq"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="QOJ-j5-4xN" id="sdI-m1-vaZ"/>
+                        <outlet property="passwordField" destination="j5R-DB-uta" id="hhh-Ts-Uef"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="54.375" y="6.3380281690140849"/>
+            <point key="canvasLocation" x="54.375" y="6.25"/>
         </scene>
     </scenes>
     <resources>
