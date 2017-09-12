@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
+import SwiftKeychainWrapper
 
 class SigninVC :UIViewController {
     @IBOutlet weak var emailField: FancyTextField!
@@ -20,6 +21,15 @@ class SigninVC :UIViewController {
         super.viewDidLoad()
         
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            print("JESS: Successfully retrieve string")
+            performSegue(withIdentifier: "FeedVC", sender: nil)
+        }
     }
 
     @IBAction func signinBtnPressed(_ sender: UIButton) {
@@ -35,6 +45,7 @@ class SigninVC :UIViewController {
                 print("JESS: Successfully authenticated with Facebook")
                 let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 self.firebaseAuth(credential)
+                self.performSegue(withIdentifier: "FeedVC", sender: nil)
             }
         }
     }
@@ -45,6 +56,9 @@ class SigninVC :UIViewController {
                 print("JESS: Unable to authenticate with Firebase - \(error)")
             } else {
                 print("JESS: Successfully authenticated with Firebase")
+                if let user = user {
+                    self.saveKeychain(id: user.uid)
+                }
             }
         }
     }
@@ -54,10 +68,18 @@ class SigninVC :UIViewController {
             Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
                 if error == nil {
                     print("JESS: Successfully Sign in Firebase")
+                    if let user = user {
+                        self.saveKeychain(id: user.uid)
+                    }
+                    self.performSegue(withIdentifier: "FeedVC", sender: nil)
                 } else {
                     Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
                         if error == nil {
                             print("JESS: Successfully authenticated with Firebase")
+                            if let user = user {
+                                self.saveKeychain(id: user.uid)
+                            }
+                            self.performSegue(withIdentifier: "FeedVC", sender: nil)
                         } else {
                             print("JESS: Failed authenticated with Firebase")
                         }
@@ -65,6 +87,11 @@ class SigninVC :UIViewController {
                 }
             })
         }
+    }
+    
+    func saveKeychain(id: String){
+        KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        print("JESS: Successfully save keychanin")
     }
 
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B8298591F682FB1003DD2CB /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8298581F682FB1003DD2CB /* FeedVC.swift */; };
 		0BA47A771F5EE6CA00ED941E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA47A761F5EE6CA00ED941E /* AppDelegate.swift */; };
 		0BA47A791F5EE6CA00ED941E /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA47A781F5EE6CA00ED941E /* SigninVC.swift */; };
 		0BA47A7C1F5EE6CA00ED941E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA47A7A1F5EE6CA00ED941E /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		0B0D87AB1F62FF3900D79415 /* First-Social.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "First-Social.entitlements"; sourceTree = "<group>"; };
+		0B8298581F682FB1003DD2CB /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		0BA47A731F5EE6CA00ED941E /* First-Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "First-Social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BA47A761F5EE6CA00ED941E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BA47A781F5EE6CA00ED941E /* SigninVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				0BA47A781F5EE6CA00ED941E /* SigninVC.swift */,
+				0B8298581F682FB1003DD2CB /* FeedVC.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				0BA47A791F5EE6CA00ED941E /* SigninVC.swift in Sources */,
 				0BA47A771F5EE6CA00ED941E /* AppDelegate.swift in Sources */,
 				0BBFB2631F617D9700F38B04 /* FancyView.swift in Sources */,
+				0B8298591F682FB1003DD2CB /* FeedVC.swift in Sources */,
 				0BBFB26B1F6188B300F38B04 /* FancyTextField.swift in Sources */,
 				0BBFB2651F617F7400F38B04 /* Constant.swift in Sources */,
 				0BBFB2691F6184A300F38B04 /* RoundFancyBtn.swift in Sources */,

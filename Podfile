@@ -11,6 +11,7 @@ target 'First-Social' do
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
   pod 'FBSDKLoginKit'
+  pod 'SwiftKeychainWrapper'
 
   target 'First-SocialTests' do
     inherit! :search_paths
