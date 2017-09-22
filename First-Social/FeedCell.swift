@@ -9,6 +9,12 @@
 import UIKit
 
 class FeedCell: UITableViewCell {
+    @IBOutlet weak var profileImg: UIImageView!
+    @IBOutlet weak var captionLbl: UILabel!
+    @IBOutlet weak var likeImg: UIImageView!
+    @IBOutlet weak var thumbnail: UIImageView!
+    @IBOutlet weak var textLbl: UITextView!
+    @IBOutlet weak var likesCounter: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

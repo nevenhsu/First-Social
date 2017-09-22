@@ -57,7 +57,8 @@ class SigninVC :UIViewController {
             } else {
                 print("JESS: Successfully authenticated with Firebase")
                 if let user = user {
-                    self.saveKeychain(id: user.uid)
+                    let userData = ["provider": credential.provider]
+                    self.saveKeychain(id: user.uid, userData: userData)
                 }
             }
         }
@@ -69,7 +70,8 @@ class SigninVC :UIViewController {
                 if error == nil {
                     print("JESS: Successfully Sign in Firebase")
                     if let user = user {
-                        self.saveKeychain(id: user.uid)
+                        let userData = ["provider": user.providerID]
+                        self.saveKeychain(id: user.uid, userData: userData)
                     }
                     self.performSegue(withIdentifier: "FeedVC", sender: nil)
                 } else {
@@ -77,7 +79,8 @@ class SigninVC :UIViewController {
                         if error == nil {
                             print("JESS: Successfully authenticated with Firebase")
                             if let user = user {
-                                self.saveKeychain(id: user.uid)
+                                let userData = ["provider": user.providerID]
+                                self.saveKeychain(id: user.uid, userData: userData)
                             }
                             self.performSegue(withIdentifier: "FeedVC", sender: nil)
                         } else {
@@ -89,7 +92,8 @@ class SigninVC :UIViewController {
         }
     }
     
-    func saveKeychain(id: String){
+    func saveKeychain(id: String, userData: [String: String]) {
+        DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
         KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("JESS: Successfully save keychanin")
     }
