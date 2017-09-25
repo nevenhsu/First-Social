@@ -9,9 +9,8 @@
 import Foundation
 import Firebase
 
-
 let REF_DB = Database.database().reference()
-
+let REF_GS = Storage.storage()
 
 class DataService {
     
@@ -19,6 +18,7 @@ class DataService {
     
     private let _REF_POSTS = REF_DB.child("posts")
     private let _REF_USERS = REF_DB.child("users")
+    private let _REF_POST_IMAGES = REF_GS.reference().child("post-imgs")
     
     var REF_POSTS : DatabaseReference {
         return _REF_POSTS
@@ -28,6 +28,9 @@ class DataService {
         return _REF_USERS
     }
     
+    var REF_POST_IMAGES : StorageReference {
+        return _REF_POST_IMAGES
+    }
     
     func createFirebaseDBUser(uid: String, userData: [String: String]) {
         REF_USERS.child(uid).updateChildValues(userData)

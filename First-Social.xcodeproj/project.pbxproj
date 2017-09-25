@@ -149,13 +149,13 @@
 		0BBFB25D1F5EEBE300F38B04 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				0B99AED81F72B6FD00F8D23B /* FeedCell.swift */,
 				0BA47A7A1F5EE6CA00ED941E /* Main.storyboard */,
 				0BA47A7F1F5EE6CB00ED941E /* LaunchScreen.storyboard */,
 				0BBFB2621F617D9700F38B04 /* FancyView.swift */,
 				0BBFB2661F61848800F38B04 /* FancyBtn.swift */,
 				0BBFB2681F6184A300F38B04 /* RoundFancyBtn.swift */,
 				0BBFB26A1F6188B300F38B04 /* FancyTextField.swift */,
-				0B99AED81F72B6FD00F8D23B /* FeedCell.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -163,11 +163,11 @@
 		0BBFB25E1F5EEBEA00F38B04 /* utli */ = {
 			isa = PBXGroup;
 			children = (
+				0B99AEDA1F72B98200F8D23B /* DataService.swift */,
 				0BBFB2601F5EEE1200F38B04 /* GoogleService-Info.plist */,
 				0BA47A821F5EE6CB00ED941E /* Info.plist */,
 				0BA47A761F5EE6CA00ED941E /* AppDelegate.swift */,
 				0BBFB2641F617F7400F38B04 /* Constant.swift */,
-				0B99AEDA1F72B98200F8D23B /* DataService.swift */,
 			);
 			name = utli;
 			sourceTree = "<group>";

@@ -15,6 +15,7 @@ class FeedVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIImage
     @IBOutlet weak var addImageBtn: RoundFancyBtn!
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
+    var imageCache: NSCache<NSString, UIImage> = NSCache()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,10 +53,28 @@ class FeedVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIImage
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as? FeedCell {
             let post = posts[indexPath.row]
-            cell.updateCell(post: post)
-            return cell
+            
+            if let img = imageCache.object(forKey: post.imageUrl as NSString) {
+                cell.updateCell(post: post, img: img)
+                return cell
+            } else {
+                let imgRef = REF_GS.reference(forURL: post.imageUrl)
+                
+                imgRef.getData(maxSize: 1000 * 1024 * 1024) { (data, err) in
+                    if err != nil {
+                        print("JESS: Storage get data failed - Error: \(err)")
+                    } else {
+                        guard let img = UIImage(data: data!) else {
+                            return
+                        }
+                        cell.updateCell(post: post, img: img)
+                        self.imageCache.setObject(img, forKey: post.imageUrl as NSString)
+                    }
+                }
+                return cell
+            }
         } else {
-            return UITableViewCell()
+            return FeedCell()
         }
     }
 
@@ -69,6 +88,12 @@ class FeedVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIImage
     }
     
     
+    @IBAction func uploadBtnTapped(_ sender: UIButton) {
+//        guard let caption =  else {
+//            <#statements#>
+//        }
+        let uuid = UUID().uuidString
+    }
     
     @IBAction func signOutTapped(_ sender: UIButton) {
         KeychainWrapper.standard.remove(key: KEY_UID)

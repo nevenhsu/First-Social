@@ -7,14 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class FeedCell: UITableViewCell {
     @IBOutlet weak var profileImg: UIImageView!
-    @IBOutlet weak var captionLbl: UILabel!
     @IBOutlet weak var likeImg: UIImageView!
     @IBOutlet weak var thumbnail: UIImageView!
-    @IBOutlet weak var textLbl: UITextView!
     @IBOutlet weak var likesCounter: UILabel!
+    @IBOutlet weak var captionView: UITextView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,15 +28,19 @@ class FeedCell: UITableViewCell {
     }
     
     
-    func updateCell(post: Post) {
-        do {
-            let url = URL(fileURLWithPath: post.imageUrl)
-            let imageData = try Data(contentsOf: url)
-            thumbnail.image = UIImage(data: imageData)
-        } catch let err {
-            print("JESS: Can't thunbnail url not valid - Error: \(err)")
-        }
-        
+    func updateCell(post: Post, img: UIImage) {
+//        do {
+//            guard let url = URL(string: post.imageUrl) else {
+//                print("JESS: Can't thunbnail url not valid")
+//                return
+//            }
+//            let imageData = try Data(contentsOf: url)
+//            thumbnail.image = UIImage(data: imageData)
+//        } catch let err {
+//            print("JESS: Can't thunbnail url not valid - Error: \(err)")
+//        }
+
+        thumbnail.image = img
         
         if post.likes != -1 {
             likesCounter.text = "\(post.likes)"
@@ -44,7 +48,7 @@ class FeedCell: UITableViewCell {
             likesCounter.text = "???"
         }
         
-        captionLbl.text = post.caption
+        captionView.text = post.caption
     }
 
 }
