@@ -18,12 +18,14 @@ class RoundFancyBtn: UIButton {
         layer.shadowRadius = 4
         layer.shadowOpacity = 1
         layer.shadowOffset = CGSize(width: 1, height: 2)
-        imageView?.contentMode = .scaleAspectFit
+        imageView?.contentMode = .scaleAspectFill
+        clipsToBounds = true
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = self.frame.size.width / 2
+        
     }
 
 }

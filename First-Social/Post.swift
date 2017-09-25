@@ -15,19 +15,36 @@ class Post {
     private var _postKey: String!
     
     var caption: String {
-        return _caption
+        if _caption != nil {
+            return _caption
+        } else {
+            return ""
+        }
     }
     
     var imageUrl: String! {
+        if _imageUrl != nil {
         return _imageUrl
+        } else {
+            return ""
+        }
     }
     
     var likes: Int {
+        if _likes != nil {
         return _likes
+        } else {
+            return -1
+        }
     }
     
     var postKey: String {
-        return _postKey
+        if _postKey != nil {
+            return _postKey
+        } else {
+            return ""
+        }
+        
     }
     
     init(caption: String, imageUrl: String, likes: Int) {

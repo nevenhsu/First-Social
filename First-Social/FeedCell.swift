@@ -26,5 +26,25 @@ class FeedCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
+    func updateCell(post: Post) {
+        do {
+            let url = URL(fileURLWithPath: post.imageUrl)
+            let imageData = try Data(contentsOf: url)
+            thumbnail.image = UIImage(data: imageData)
+        } catch let err {
+            print("JESS: Can't thunbnail url not valid - Error: \(err)")
+        }
+        
+        
+        if post.likes != -1 {
+            likesCounter.text = "\(post.likes)"
+        } else {
+            likesCounter.text = "???"
+        }
+        
+        captionLbl.text = post.caption
+    }
 
 }

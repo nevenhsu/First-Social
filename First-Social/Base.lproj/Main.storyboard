@@ -252,6 +252,9 @@
                                                     <constraint firstAttribute="height" constant="48" id="XEn-Tg-0Ur"/>
                                                 </constraints>
                                                 <state key="normal" image="add-image"/>
+                                                <connections>
+                                                    <action selector="addImageBtnPressed:" destination="c8y-Oh-ODM" eventType="touchUpInside" id="tv8-Ga-0tz"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -405,6 +408,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addImageBtn" destination="hkR-na-6VC" id="AzU-dh-IKP"/>
                         <outlet property="tableView" destination="ge3-g4-8lW" id="Uyk-Io-qgr"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="SigninVC" id="YIR-Zf-3v0"/>
                     </connections>

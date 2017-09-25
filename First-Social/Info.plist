@@ -58,5 +58,7 @@
 	<array>
 		<string>fbauth2</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>&quot;Choose your photo to upload&quot;</string>
 </dict>
 </plist>
