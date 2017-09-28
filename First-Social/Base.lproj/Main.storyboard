@@ -317,7 +317,7 @@
                                                                             <color key="textColor" red="0.81661039589999995" green="0.23502624029999999" blue="0.003539980622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-heart" translatesAutoresizingMaskIntoConstraints="NO" id="AQA-zs-jWB">
+                                                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-heart" translatesAutoresizingMaskIntoConstraints="NO" id="AQA-zs-jWB">
                                                                             <rect key="frame" x="350" y="0.0" width="48" height="48"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="48" id="OXG-wE-8mi"/>
@@ -412,6 +412,7 @@
                     </view>
                     <connections>
                         <outlet property="addImageBtn" destination="hkR-na-6VC" id="AzU-dh-IKP"/>
+                        <outlet property="captionField" destination="nUH-N9-bFn" id="9Q0-BQ-S8u"/>
                         <outlet property="tableView" destination="ge3-g4-8lW" id="Uyk-Io-qgr"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="SigninVC" id="YIR-Zf-3v0"/>
                     </connections>

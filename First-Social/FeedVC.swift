@@ -11,11 +11,13 @@ import Firebase
 import SwiftKeychainWrapper
 
 class FeedVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    @IBOutlet weak var captionField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addImageBtn: RoundFancyBtn!
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
     var imageCache: NSCache<NSString, UIImage> = NSCache()
+    var isAddImage = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +31,17 @@ class FeedVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIImage
         
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                
+                var posts = [Post]()
+                
                 for snap in snapshot {
                     if let postDic = snap.value as? [String:AnyObject] {
                         let key = snap.key
                         let post = Post(postKey: key, postData: postDic)
-                        self.posts.append(post)
+                        posts.append(post)
                     }
                 }
+                self.posts = posts
                 self.tableView.reloadData()
             }
         })
@@ -56,7 +62,6 @@ class FeedVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIImage
             
             if let img = imageCache.object(forKey: post.imageUrl as NSString) {
                 cell.updateCell(post: post, img: img)
-                return cell
             } else {
                 let imgRef = REF_GS.reference(forURL: post.imageUrl)
                 
@@ -71,8 +76,8 @@ class FeedVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIImage
                         self.imageCache.setObject(img, forKey: post.imageUrl as NSString)
                     }
                 }
-                return cell
             }
+            return cell
         } else {
             return FeedCell()
         }
@@ -81,6 +86,7 @@ class FeedVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIImage
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             addImageBtn.setImage(image, for: .normal)
+            isAddImage = true
         } else {
             print("JESS: asigning image failed")
         }
@@ -89,10 +95,39 @@ class FeedVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIImage
     
     
     @IBAction func uploadBtnTapped(_ sender: UIButton) {
-//        guard let caption =  else {
-//            <#statements#>
-//        }
+
+        guard let caption = captionField.text , !caption.isEmpty  else {
+            print("JESS: caption field can't be empty")
+            return
+        }
+        
+        guard let img = addImageBtn.currentImage,
+            isAddImage,
+            let imgData = UIImageJPEGRepresentation(img, 0.2) else {
+            return
+        }
+        
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        
         let uuid = UUID().uuidString
+        
+        DataService.ds.REF_POST_IMAGES.child(uuid).putData(imgData, metadata: metadata, completion: { (metadata, err) in
+            guard metadata != nil else {
+                print("JESS: upload post failed")
+                return
+            }
+            
+            let imgUrl = metadata?.downloadURL()?.absoluteString
+            
+            let data: [String : Any] = [
+            "caption": caption,
+            "imageUrl": imgUrl ?? "",
+            "likes": 0
+            ]
+            
+            DataService.ds.REF_POSTS.childByAutoId().setValue(data)
+        })
     }
     
     @IBAction func signOutTapped(_ sender: UIButton) {
@@ -105,4 +140,6 @@ class FeedVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIImage
     @IBAction func addImageBtnPressed(_ sender: UIButton) {
         self.present(imagePicker, animated: true, completion: nil)
     }
+    
+
 }
